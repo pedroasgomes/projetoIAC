@@ -13,6 +13,7 @@
 ; * Constantes
 ; *********************************************************************************
 	
+	
 ; ----------- * Endereços * -----------
 
 DISPLAYS			EQU 0A000H	; endereço do display que mostra os outputs do telcado
