@@ -67,9 +67,9 @@ TOCA_SOM			EQU 	605AH      	; endereço do comando para tocar um som
 ; *********************************************************************************
 ; * Dados 
 ; *********************************************************************************
-	PLACE       1000H
+	PLACE     	1000H
 pilha:
-	STACK 100H					; espaço reservado para a pilha (100H WORDS, 200H BYTES)
+	STACK 		100H				; espaço reservado para a pilha (100H WORDS, 200H BYTES)
 SP_inicial:						; inicializa SP com o endereço do fim da pilha (1200H). 
 							; O 1º end. de retorno será armazenado em 11FEH (1200H-2)
 							
@@ -96,7 +96,7 @@ DEF_METEORO:									; tabela que guarda as inf. do meteoro max
 ; * -------------------------------- Código Geral --------------------------------
 ; *
 ; *********************************************************************************
-	PLACE   0                     	; o código tem de começar em 0000H
+	PLACE   	0               ; o código tem de começar em 0000H
 inicio:
 	MOV  	SP, SP_inicial		; inicializa SP        
     	MOV  	[APAGA_AVISO], R1	; apaga o aviso de nenhum cenário selecionado (o valor de R1 não é relevante)
