@@ -15,54 +15,54 @@
 
 ; ----------- * Endereços * -----------
 
-DISPLAYS			EQU 0A000H	; endereço do display que mostra os outputs do telcado
-TEC_LIN				EQU 0C000H	; endereço das linhas do teclado (periférico POUT-2)
-TEC_COL				EQU 0E000H	; endereço das colunas do teclado (periférico PIN)
+DISPLAYS			EQU 	0A000H		; endereço do display que mostra os outputs do telcado
+TEC_LIN				EQU 	0C000H		; endereço das linhas do teclado (periférico POUT-2)
+TEC_COL				EQU 	0E000H		; endereço das colunas do teclado (periférico PIN)
 
 ; ----------- * Constantes * -----------
 
-LINHA_INICIAL       EQU  28        	; linha incial da nave (fim do ecrã)
-COLUNA_INICIAL		EQU  30        	; coluna inicial da nave (meio do ecrã)
-LINHA_MET			EQU  -1			; linha inicial do meteoro (topo do ecrã)
-COLUNA_MET			EQU  30			; coluna iniucial do meteoro (a meio do ecrã)
-MIN_COLUNA			EQU  0			; número da coluna mais à esquerda que o objeto pode ocupar
-MAX_COLUNA			EQU  62        	; número da coluna mais à direita que o objeto pode ocupar
+LINHA_INICIAL       		EQU  	28        	; linha incial da nave (fim do ecrã)
+COLUNA_INICIAL			EQU  	30        	; coluna inicial da nave (meio do ecrã)
+LINHA_MET			EQU  	-1		; linha inicial do meteoro (topo do ecrã)
+COLUNA_MET			EQU  	30		; coluna iniucial do meteoro (a meio do ecrã)
+MIN_COLUNA			EQU  	0		; número da coluna mais à esquerda que o objeto pode ocupar
+MAX_COLUNA			EQU 	62        	; número da coluna mais à direita que o objeto pode ocupar
 
-LINHA_TECLADO		EQU 10H			; prepara a primeira linha a ser testada (Vai haver um SHR)    
-MASCARA				EQU 0FH			; isola os 4 bits de menor peso, ao ler as colunas do teclado
+LINHA_TECLADO			EQU 	10H		; prepara a primeira linha a ser testada (Vai haver um SHR)    
+MASCARA				EQU 	0FH		; isola os 4 bits de menor peso, ao ler as colunas do teclado
 
-TECLA_ESQUERDA		EQU 0000H		; valor da tecla 0 	
-TELCA_DISPARO		EQU 0001H		; valor da tecla 1										
-TECLA_DIREITA		EQU 0002H		; valor da tecla 2 
+TECLA_ESQUERDA			EQU 	0000H		; valor da tecla 0 	
+TELCA_DISPARO			EQU 	0001H		; valor da tecla 1										
+TECLA_DIREITA			EQU 	0002H		; valor da tecla 2 
 
-TECLA_START			EQU 000CH      	; valor da tecla C
-TECLA_PAUSA         EQU 000DH      	; valor da tecla D
-TECLA_METEORO		EQU 0005H      	; valor da tecla 5
+TECLA_START			EQU 	000CH      	; valor da tecla C
+TECLA_PAUSA         		EQU 	000DH      	; valor da tecla D
+TECLA_METEORO			EQU 	0005H      	; valor da tecla 5
 	
-TECLA_AUMENTA		EQU 0003H		; valor da tecla 3										
-TECLA_DIMINUI		EQU 00007		; valor da tecla 7 
+TECLA_AUMENTA			EQU 	0003H		; valor da tecla 3										
+TECLA_DIMINUI			EQU 	00007		; valor da tecla 7 
 
-LARGURA				EQU	5			; largura da nave
-ALTURA				EQU  4         	; altura da nave
-LARGURA_METEORO		EQU  5         	; largura do meteoro
-ALTURA_METEORO		EQU  5         	; altura do meteoro
-COR_NADA			EQU  00000H		; cor do vazio: Transparente (Estética)
+LARGURA				EQU	5		; largura da nave
+ALTURA				EQU  	4         	; altura da nave
+LARGURA_METEORO			EQU  	5         	; largura do meteoro
+ALTURA_METEORO			EQU  	5         	; altura do meteoro
+COR_NADA			EQU  	00000H		; cor do vazio: Transparente (Estética)
 COR_YLW				EQU	0FFF0H		; cor da nave: Amarelo
 COR_RED				EQU	0FF00H		; cor da nave: Amarelo
 ATRASO				EQU	0400H		; atraso para limitar a velocidade de movimento da nave
 
 
 
-DEFINE_LINHA    	EQU 600AH      	; endereço do comando para definir a linha
-DEFINE_COLUNA   	EQU 600CH      	; endereço do comando para definir a coluna
-SELECIONA_ECRA		EQU 6004H      	; endereço do comando para selecionar o ecrã
-MOSTRA_ECRA 		EQU 6006H	   	; endereço do comando para mostrar ecrã selecionado
-ESCONDE_ECRA		EQU 6008H		; endereço do comando para esconder ecrã selecionado
-DEFINE_PIXEL   		EQU 6012H      	; endereço do comando para escrever um pixel
-APAGA_AVISO    		EQU 6040H      	; endereço do comando para apagar o aviso de nenhum cenário selecionado
-APAGA_ECRÃ	 		EQU 6002H      	; endereço do comando para apagar todos os pixels já desenhados
-SC_FUNDO  			EQU 6042H      	; endereço do comando para selecionar uma imagem de fundo	
-TOCA_SOM			EQU 605AH      	; endereço do comando para tocar um som
+DEFINE_LINHA    		EQU 	600AH      	; endereço do comando para definir a linha
+DEFINE_COLUNA   		EQU 	600CH      	; endereço do comando para definir a coluna
+SELECIONA_ECRA			EQU 	6004H      	; endereço do comando para selecionar o ecrã
+MOSTRA_ECRA 			EQU 	6006H	   	; endereço do comando para mostrar ecrã selecionado
+ESCONDE_ECRA			EQU 	6008H		; endereço do comando para esconder ecrã selecionado
+DEFINE_PIXEL   			EQU 	6012H      	; endereço do comando para escrever um pixel
+APAGA_AVISO    			EQU 	6040H      	; endereço do comando para apagar o aviso de nenhum cenário selecionado
+APAGA_ECRÃ	 		EQU 	6002H      	; endereço do comando para apagar todos os pixels já desenhados
+SC_FUNDO  			EQU 	6042H      	; endereço do comando para selecionar uma imagem de fundo	
+TOCA_SOM			EQU 	605AH      	; endereço do comando para tocar um som
 
 ; *********************************************************************************
 ; * Dados 
@@ -71,24 +71,24 @@ TOCA_SOM			EQU 605AH      	; endereço do comando para tocar um som
 pilha:
 	STACK 100H					; espaço reservado para a pilha (100H WORDS, 200H BYTES)
 SP_inicial:						; inicializa SP com o endereço do fim da pilha (1200H). 
-								; O 1º end. de retorno será armazenado em 11FEH (1200H-2)
+							; O 1º end. de retorno será armazenado em 11FEH (1200H-2)
 							
-DEF_NAVE:														; tabela que guarda as inf. da nave
-	WORD		ALTURA 											; guarda a altura da nave								
-	WORD 		LARGURA											; guarda a largura da nave
-	WORD		COR_NADA, COR_NADA, COR_YLW, COR_NADA, COR_NADA	; guarda a info. da primeira linha
-	WORD		COR_YLW, COR_NADA, COR_YLW, COR_NADA, COR_YLW  	; guarda a info. da segunda linha
-	WORD		COR_YLW, COR_YLW, COR_YLW, COR_YLW, COR_YLW  	; guarda a info. da terceira linha
-	WORD		COR_NADA, COR_YLW, COR_NADA, COR_YLW, COR_NADA  ; guarda a info. da quarta linha
+DEF_NAVE:									; tabela que guarda as inf. da nave
+	WORD		ALTURA 							; guarda a altura da nave								
+	WORD 		LARGURA							; guarda a largura da nave
+	WORD		COR_NADA, COR_NADA, COR_YLW, COR_NADA, COR_NADA		; guarda a info. da primeira linha
+	WORD		COR_YLW, COR_NADA, COR_YLW, COR_NADA, COR_YLW  		; guarda a info. da segunda linha
+	WORD		COR_YLW, COR_YLW, COR_YLW, COR_YLW, COR_YLW  		; guarda a info. da terceira linha
+	WORD		COR_NADA, COR_YLW, COR_NADA, COR_YLW, COR_NADA  	; guarda a info. da quarta linha
 
-DEF_METEORO:													; tabela que guarda as inf. do meteoro max
-	WORD		ALTURA_METEORO									; guarda a altura do meteoro
-	WORD		LARGURA_METEORO									; guarda a largura do meteoro
-	WORD		COR_RED, COR_NADA, COR_NADA, COR_NADA, COR_RED	; guarda a info. da primeira linha
-	WORD		COR_RED, COR_NADA, COR_RED, COR_NADA, COR_RED  	; guarda a info. da segunda linha
-	WORD		COR_NADA, COR_RED, COR_RED, COR_RED, COR_NADA  	; guarda a info. da terceira linha
-	WORD		COR_RED, COR_NADA, COR_RED, COR_NADA, COR_RED	; guarda a info. da QUARTA linha
-	WORD		COR_RED, COR_NADA, COR_NADA, COR_NADA, COR_RED  ; guarda a info. da quinta linha
+DEF_METEORO:									; tabela que guarda as inf. do meteoro max
+	WORD		ALTURA_METEORO						; guarda a altura do meteoro
+	WORD		LARGURA_METEORO						; guarda a largura do meteoro
+		WORD	COR_RED, COR_NADA, COR_NADA, COR_NADA, COR_RED		; guarda a info. da primeira linha
+	WORD		COR_RED, COR_NADA, COR_RED, COR_NADA, COR_RED  		; guarda a info. da segunda linha
+	WORD		COR_NADA, COR_RED, COR_RED, COR_RED, COR_NADA  		; guarda a info. da terceira linha
+	WORD		COR_RED, COR_NADA, COR_RED, COR_NADA, COR_RED		; guarda a info. da QUARTA linha
+	WORD		COR_RED, COR_NADA, COR_NADA, COR_NADA, COR_RED  	; guarda a info. da quinta linha
      
 
 ; *********************************************************************************
@@ -96,100 +96,100 @@ DEF_METEORO:													; tabela que guarda as inf. do meteoro max
 ; * -------------------------------- Código Geral --------------------------------
 ; *
 ; *********************************************************************************
-PLACE   0                     	; o código tem de começar em 0000H
+	PLACE   0                     	; o código tem de começar em 0000H
 inicio:
 	MOV  	SP, SP_inicial		; inicializa SP        
-    MOV  	[APAGA_AVISO], R1	; apaga o aviso de nenhum cenário selecionado (o valor de R1 não é relevante)
-    MOV  	[APAGA_ECRÃ], R1	; apaga todos os pixels já desenhados (o valor de R1 não é relevante)
-	MOV	 	R1, 0				; cenário de fundo número 0
-    MOV  	[SC_FUNDO], R1		; seleciona o cenário de fundo
+    	MOV  	[APAGA_AVISO], R1	; apaga o aviso de nenhum cenário selecionado (o valor de R1 não é relevante)
+    	MOV  	[APAGA_ECRÃ], R1	; apaga todos os pixels já desenhados (o valor de R1 não é relevante)
+	MOV	R1, 0			; cenário de fundo número 0
+    	MOV  	[SC_FUNDO], R1		; seleciona o cenário de fundo
 
-    MOV  	R1, LINHA_INICIAL	; linha da nave
-    MOV  	R2, COLUNA_INICIAL	; coluna da nave
-    MOV  	R3, 0             	; valor inicial do display
-	MOV	 	R4, DEF_NAVE		; endereço da tabela que define a nave
+    	MOV  	R1, LINHA_INICIAL	; linha da nave
+   	MOV  	R2, COLUNA_INICIAL	; coluna da nave
+    	MOV  	R3, 0             	; valor inicial do display
+	MOV	R4, DEF_NAVE		; endereço da tabela que define a nave
 	MOV  	R5, LINHA_MET      	; linha do meteoro
 	MOV  	R6, COLUNA_MET     	; coluna do meteoro
-	MOV	 	R7, 1				; valor a somar à coluna da nave, para o movimentar
+	MOV	R7, 1			; valor a somar à coluna da nave, para o movimentar
 	MOV  	R10, 0             	; inicia o jogo sem pausa (1 = Jogo pausado, 0 = Jogo resumido)
 	CALL 	escreve_display		; inicia o dislay a 0
 
 espera_start:
-	CALL	teclado				; leitura das teclas
-	PUSH 	R11					; guarda o valor de R11
+	CALL	teclado			; leitura das teclas
+	PUSH 	R11			; guarda o valor de R11
 	MOV  	R11, TECLA_START	; passa para R11 o valor da tecla start (C)
-	CMP		R0, R11 			; verifica se é a tecla start (C)
-	POP  	R11 				; retorna o valor original de R11
-	JNZ		espera_start		; caso a tecla primida não a C, repete o ciclo
+	CMP	R0, R11 		; verifica se é a tecla start (C)
+	POP  	R11 			; retorna o valor original de R11
+	JNZ	espera_start		; caso a tecla primida não a C, repete o ciclo
 
 	PUSH 	R1                 	; guarda o valor de R1
-	MOV		R1, 1				; cenário de fundo número 1
-    MOV  	[SC_FUNDO], R1		; seleciona o cenário de fundo
-    POP  	R1					; retorna o valor original de R1
-    CALL 	desenha_obj_atraso	; chama a rotina que se encarrega de desenhar a nave
+	MOV	R1, 1			; cenário de fundo número 1
+   	 MOV  	[SC_FUNDO], R1		; seleciona o cenário de fundo
+    	POP  	R1			; retorna o valor original de R1
+    	CALL 	desenha_obj_atraso	; chama a rotina que se encarrega de desenhar a nave
 
-espera_tecla:					; neste ciclo espera-se até uma tecla ser premida
-	CALL	teclado				; leitura das teclas
-	JZ 		testa_pausa			; testa qual tecla foi primida
+espera_tecla:				; neste ciclo espera-se até uma tecla ser premida
+	CALL	teclado			; leitura das teclas
+	JZ 	testa_pausa		; testa qual tecla foi primida
 	JMP  	espera_tecla   		; espera até haver um input de tecla
 
-espera_tecla_press:				; neste ciclo espera-se até NÃO haver nenhuma tecla premida
-	CALL	teclado				; leitura das teclas
-	CMP		R0, 0FFFFH			; verifica se a tecla deixou de ser carregada
-	JNZ		espera_tecla_press	; espera, enquanto houver tecla uma tecla carregada
+espera_tecla_press:			; neste ciclo espera-se até NÃO haver nenhuma tecla premida
+	CALL	teclado			; leitura das teclas
+	CMP	R0, 0FFFFH		; verifica se a tecla deixou de ser carregada
+	JNZ	espera_tecla_press	; espera, enquanto houver tecla uma tecla carregada
 	JZ   	espera_tecla		; volta a ficar à espera de um input de tecla
 
 ; *********************************************************************************
 ; * -------------------------------- Testa Teclas --------------------------------
 ; *********************************************************************************
 
-testa_pausa:					; verifica se o jogador está a tentar meter pausa
-	PUSH 	R11					; guarda o valor do registo 11
+testa_pausa:				; verifica se o jogador está a tentar meter pausa
+	PUSH 	R11			; guarda o valor do registo 11
 	MOV  	R11, TECLA_PAUSA	; passa para o registo 11 o valor da tecla de pausa
-	CMP		R0, R11 			; verifica se a tecla pressionada é a de pausa
-	POP  	R11 				; retorna o valor inicial do registo R11 
-	JNZ		testa_tira_pausa	; se a tecla pressionada não for a de pausa vai saltar para um teste
+	CMP	R0, R11 		; verifica se a tecla pressionada é a de pausa
+	POP  	R11 			; retorna o valor inicial do registo R11 
+	JNZ	testa_tira_pausa	; se a tecla pressionada não for a de pausa vai saltar para um teste
 	CALL 	pausa_toggle		; chama a rotina que muda o estado de pausa do jogo
-	JMP 	espera_tecla_press  ; salta e fica à espera de um novo input de tecla
+	JMP 	espera_tecla_press  	; salta e fica à espera de um novo input de tecla
 
-testa_tira_pausa:           	; verifica se o jogador está em pausa para bloquear qualquer outra tecla
+testa_tira_pausa:           		; verifica se o jogador está em pausa para bloquear qualquer outra tecla
 	CMP 	R10, 1             	; verifica se o jogador está em pausa
-	JZ 		espera_tecla        ; se estiver fica à espera de um novo input de tecla
+	JZ 	espera_tecla       	; se estiver fica à espera de um novo input de tecla
 	
-testa_esquerda: 				; verifica se o jogador está a tentar andar para a esquerda
-	CMP		R0, TECLA_ESQUERDA  ; verifica se é a tecla da esquerda
-	JNZ		testa_direita		; se não for salta para testar a direita
-	MOV		R7, -1				; se for vai deslocar para a esquerda
-	CALL	ve_limites			; e vai ver os limites
+testa_esquerda: 			; verifica se o jogador está a tentar andar para a esquerda
+	CMP	R0, TECLA_ESQUERDA  	; verifica se é a tecla da esquerda
+	JNZ	testa_direita		; se não for salta para testar a direita
+	MOV	R7, -1			; se for vai deslocar para a esquerda
+	CALL	ve_limites		; e vai ver os limites
 	JMP 	espera_tecla    	; fica à espera de um novo input de tecla
 
 
-testa_direita:					; verifica se o jogador está a tentar andar para a direita
-	CMP		R0, TECLA_DIREITA	; verifica se é a tecla da direita
-	JNZ		testa_meteoro		; se não for salta para testar meteoro 
-	MOV		R7, +1				; se for vai deslocar para a direita
-	CALL	ve_limites			; e vai ver os limites
+testa_direita:				; verifica se o jogador está a tentar andar para a direita
+	CMP	R0, TECLA_DIREITA	; verifica se é a tecla da direita
+	JNZ	testa_meteoro		; se não for salta para testar meteoro 
+	MOV	R7, +1			; se for vai deslocar para a direita
+	CALL	ve_limites		; e vai ver os limites
 	JMP 	espera_tecla    	; fica à espera de um novo input de tecla
 
-testa_meteoro:					; verifica se o jogador está a tentar mover o meteoro
-	CMP		R0, TECLA_METEORO	; verifica se é a tecla do meteoro
+testa_meteoro:				; verifica se o jogador está a tentar mover o meteoro
+	CMP	R0, TECLA_METEORO	; verifica se é a tecla do meteoro
 	JNZ  	testa_aumenta		; se não for salta para testar a tecla de aumentar
 	CALL 	prepara_meteoro    	; chama a rotina que trata de desenhar o meteoro
-	JMP		espera_tecla_press	; salta para o loop que trata dos presses 
+	JMP	espera_tecla_press	; salta para o loop que trata dos presses 
 
-testa_aumenta:					; verifica se o jogador está a tentar aumentar o display
-	CMP		R0, TECLA_AUMENTA	; verifica se é a tecla de aumentar o display
-	JNZ		testa_desce			; se não for salta para testar a tecla de descer 
+testa_aumenta:				; verifica se o jogador está a tentar aumentar o display
+	CMP	R0, TECLA_AUMENTA	; verifica se é a tecla de aumentar o display
+	JNZ	testa_desce		; se não for salta para testar a tecla de descer 
 	ADD  	R3, 1              	; adiciona 1 ao registo que guarda o valor do display
 	CALL  	escreve_display		; chama a rotina que atualiza o display
-	JMP		espera_tecla_press	; chama a rotina que trata dos presses 
+	JMP	espera_tecla_press	; chama a rotina que trata dos presses 
 
-testa_desce:					; verifica se o jogador está a tentar diminuir o display
-	CMP		R0, TECLA_DIMINUI	; verifica se é a tecla de diminuir o display
-	JNZ		espera_tecla		; se não for nada volta a pedir um input de tecla 
+testa_desce:				; verifica se o jogador está a tentar diminuir o display
+	CMP	R0, TECLA_DIMINUI	; verifica se é a tecla de diminuir o display
+	JNZ	espera_tecla		; se não for nada volta a pedir um input de tecla 
 	SUB 	R3, 1           	; subtrai 1 ao registo que guarda o valor do display
 	CALL  	escreve_display		; chama a rotina que atualiza o display
-	JMP		espera_tecla_press  ; chama a rotina que trata dos presses 
+	JMP	espera_tecla_press  	; chama a rotina que trata dos presses 
 	
 ; *********************************************************************************
 ; *
