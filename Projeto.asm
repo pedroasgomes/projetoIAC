@@ -84,7 +84,7 @@ DEF_NAVE:									; tabela que guarda as inf. da nave
 DEF_METEORO:									; tabela que guarda as inf. do meteoro max
 	WORD		ALTURA_METEORO						; guarda a altura do meteoro
 	WORD		LARGURA_METEORO						; guarda a largura do meteoro
-		WORD	COR_RED, COR_NADA, COR_NADA, COR_NADA, COR_RED		; guarda a info. da primeira linha
+	WORD		COR_RED, COR_NADA, COR_NADA, COR_NADA, COR_RED		; guarda a info. da primeira linha
 	WORD		COR_RED, COR_NADA, COR_RED, COR_NADA, COR_RED  		; guarda a info. da segunda linha
 	WORD		COR_NADA, COR_RED, COR_RED, COR_RED, COR_NADA  		; guarda a info. da terceira linha
 	WORD		COR_RED, COR_NADA, COR_RED, COR_NADA, COR_RED		; guarda a info. da QUARTA linha
